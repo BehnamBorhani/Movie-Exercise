@@ -1,0 +1,9 @@
+.card {
+   width: 300px;
+   .poster {
+      img {
+         object-fit: cover;
+         width: 100%;
+      }
+   }
+}
