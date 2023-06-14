@@ -10,12 +10,14 @@ class Card extends Component {
                <div className="poster">
                   <img src={movie.Poster} alt={movie.Title} />
                </div>
-               <h2 className="title">{movie.Title}</h2>
-               <p className="information">
-                  <span>{movie.Director}</span>
-                  <span>{movie.Year}</span>
-               </p>
-               <p className="genre">{movie.Genre}</p>
+               <div className="description">
+                  <h2 className="title">{movie.Title}</h2>
+                  <p className="information">
+                     <span>{movie.Director}</span>
+                     <span>{movie.Year}</span>
+                  </p>
+                  <p className="genre">{movie.Genre}</p>
+               </div>
             </div>
          </>
       );

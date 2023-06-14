@@ -9,13 +9,25 @@ class MovieSection extends Component {
       super(props);
       this.state = {
          movies: [],
+         genres: [],
       };
    }
+
+   giveGenres = () => {
+      const genresSet = new Set();
+      this.state.movies.forEach((movie) => {
+         const movieGenres = movie.Genre.split(", ");
+         movieGenres.forEach((genre) => genresSet.add(genre));
+      });
+
+      this.setState({ genres: [...genresSet] });
+   };
 
    componentDidMount = () => {
       axios
          .get("./movies.json")
-         .then((res) => this.setState({ movies: res.data }));
+         .then((res) => this.setState({ movies: res.data }))
+         .then((res) => this.giveGenres());
    };
 
    render() {
@@ -23,8 +35,8 @@ class MovieSection extends Component {
          <>
             <section className="container">
                <div className="card-container">
-                  {this.state.movies.map((movie) => {
-                     return <Card movie={movie} />;
+                  {this.state.movies.map((movie, index) => {
+                     return <Card movie={movie} key={index} />;
                   })}
                </div>
                <SearchBox />
