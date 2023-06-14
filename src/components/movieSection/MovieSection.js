@@ -29,6 +29,16 @@ class MovieSection extends Component {
       const result = this.state.movies.filter((movie) => {
          return movie.Title.toLowerCase().includes(title);
       });
+
+      this.setState({ filteredMovies: result });
+   };
+
+   searchByGenres = (event) => {
+      const title = event.target.innerText.toLowerCase();
+      const result = this.state.movies.filter((movie) => {
+         return movie.Genre.toLowerCase().includes(title);
+      });
+
       this.setState({ filteredMovies: result });
    };
 
@@ -51,7 +61,11 @@ class MovieSection extends Component {
                      return <Card movie={movie} key={index} />;
                   })}
                </div>
-               <SearchBox genres={genres} searchByTitle={this.searchByTitle} />
+               <SearchBox
+                  genres={genres}
+                  searchByTitle={this.searchByTitle}
+                  searchByGenres={this.searchByGenres}
+               />
             </section>
          </>
       );

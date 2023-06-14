@@ -14,6 +14,9 @@
       text-align: center;
       .title {
          margin-bottom: 10px;
+         line-height: 20px;
+         max-height: 20px;
+         overflow: hidden;
       }
 
       .information {

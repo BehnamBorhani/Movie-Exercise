@@ -3,7 +3,7 @@ import "./searchBox.scss";
 
 class SearchBox extends Component {
    render() {
-      const { genres, searchByTitle } = this.props;
+      const { genres, searchByTitle, searchByGenres } = this.props;
       return (
          <>
             <aside>
@@ -19,7 +19,7 @@ class SearchBox extends Component {
                <div className="btn-container">
                   {genres.map((genre, index) => {
                      return (
-                        <button className="btn" key={index}>
+                        <button className="btn" key={index} onClick={searchByGenres}>
                            {genre}
                         </button>
                      );
