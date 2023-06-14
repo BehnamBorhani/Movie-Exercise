@@ -10,6 +10,7 @@ class MovieSection extends Component {
       this.state = {
          movies: [],
          genres: [],
+         filteredMovies: [],
       };
    }
 
@@ -23,23 +24,34 @@ class MovieSection extends Component {
       this.setState({ genres: [...genresSet] });
    };
 
+   searchByTitle = (event) => {
+      const title = event.target.value.toLowerCase();
+      const result = this.state.movies.filter((movie) => {
+         return movie.Title.toLowerCase().includes(title);
+      });
+      this.setState({ filteredMovies: result });
+   };
+
    componentDidMount = () => {
       axios
          .get("./movies.json")
-         .then((res) => this.setState({ movies: res.data }))
-         .then((res) => this.giveGenres());
+         .then((res) =>
+            this.setState({ movies: res.data, filteredMovies: res.data })
+         )
+         .then(() => this.giveGenres());
    };
 
    render() {
+      const { filteredMovies, genres } = this.state;
       return (
          <>
             <section className="container">
                <div className="card-container">
-                  {this.state.movies.map((movie, index) => {
+                  {filteredMovies.map((movie, index) => {
                      return <Card movie={movie} key={index} />;
                   })}
                </div>
-               <SearchBox />
+               <SearchBox genres={genres} searchByTitle={this.searchByTitle} />
             </section>
          </>
       );

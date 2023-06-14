@@ -1,0 +1,23 @@
+aside {
+   margin: 10px;
+   padding: 10px;
+   border: 1px solid #ccc;
+   .search {
+      margin-bottom: 20px;
+      input {
+         width: 100%;
+         padding: 10px;
+      }
+   }
+
+   .btn-container {
+      display: flex;
+      flex-direction: column;
+      .btn {
+         padding: 10px;
+         margin-bottom: 5px;
+         font-size: 1rem;
+         cursor: pointer;
+      }
+   }
+}
