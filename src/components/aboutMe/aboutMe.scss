@@ -1,0 +1,61 @@
+.about-me-sec {
+   width: 100%;
+   height: calc(100vh - 60px);
+
+   .texts {
+      position: absolute;
+      width: 30%;
+      top: 25%;
+      left: 10%;
+
+      .title {
+         font-size: 44px;
+         .name {
+            font-size: 48px;
+            color: var(--color-red);
+         }
+      }
+
+      .sub-title {
+         font-size: 18px;
+         margin-top: 10px;
+         text-align: justify;
+         color: var(--color-dark-900);
+      }
+
+      .media {
+         margin-top: 15px;
+         font-size: 24px;
+         .fa {
+            margin-right: 20px;
+            cursor: pointer;
+            color: var(--color-red);
+            transition: all 0.5s;
+            &:hover {
+               transform: scale(1.4);
+            }
+         }
+      }
+   }
+
+   .shape {
+      width: 400px;
+      height: calc(100vh - 60px);
+      clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+      background: var(--color-red);
+      position: absolute;
+      right: 10%;
+   }
+
+   .circle {
+      width: 400px;
+      height: 400px;
+      clip-path: circle(50% at 50% 50%);
+      position: absolute;
+      right: 10%;
+      top: 28%;
+      background: url("./me.jpg");
+      background-position: center;
+      background-size: cover;
+   }
+}
