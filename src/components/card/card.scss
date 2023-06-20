@@ -1,0 +1,34 @@
+.card {
+   width: 300px;
+   border: 1px solid #ccc;
+   box-shadow: 0 5px 8px #ccc;
+   .poster {
+      img {
+         object-fit: cover;
+         width: 100%;
+      }
+   }
+
+   .description {
+      padding: 10px;
+      text-align: center;
+      .title {
+         margin-bottom: 10px;
+         line-height: 20px;
+         max-height: 20px;
+         overflow: hidden;
+      }
+
+      .information {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         gap: 30px;
+         margin-bottom: 10px;
+      }
+
+      .genre {
+         margin-bottom: 10px;
+      }
+   }
+}
