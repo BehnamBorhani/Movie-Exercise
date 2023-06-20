@@ -11,8 +11,6 @@ class Home extends Component {
             "./images/sliders/s3.jpg",
             "./images/sliders/s4.jpg",
             "./images/sliders/s5.jpg",
-            "./images/sliders/s6.jpg",
-            "./images/sliders/s7.jpg",
          ],
          index: 0,
       };
