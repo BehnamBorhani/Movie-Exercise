@@ -1,0 +1,30 @@
+header {
+   position: relative;
+
+   img {
+      width: 100%;
+      object-fit:  cover;
+   }
+
+   button {
+      font-size: 3rem;
+      border: none;
+      background-color: transparent;
+      color: var(--color-primary);
+      opacity: 0.8;
+      cursor: pointer;
+      position: absolute;
+      top: 45%;
+      &:hover {
+         opacity: 1;
+      }
+   }
+   
+   .prev {
+      left: 10px;
+   }
+
+   .next {
+      right: 10px;
+   }
+}
